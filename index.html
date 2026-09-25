@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos básicos de la página MIU-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AH — Entender la máquina, no solo usarla</title>
+  <meta name="description" content="Marca personal de AH, alumno de 1º DAM en el IES Simarro. Programación, proyectos, Python e informática a bajo nivel.">
+  <meta property="og:title" content="AH — Entender la máquina, no solo usarla">
+  <meta property="og:description" content="1º DAM · IES Simarro. Proyectos, Python y bajo nivel.">
+  <meta property="og:type" content="website">
+
+  <!-- Tipografías: display (Archivo) + texto (IBM Plex Sans) + monoespaciada (IBM Plex Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Capa de grano/ruído sobre toda la web -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Indicador de progreso de lectura (barra superior) -->
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- ================= CABECERA FIJA: nombre + navegación ================= -->
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">AH</span>
+      <span class="brand-sub">1º DAM · IES&nbsp;Simarro</span>
+    </a>
+
+    <!-- Navegación principal -->
+    <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html" class="nav-link">Sobre mí</a></li>
+        <li><a href="trabajo.html" class="nav-link">Lo que he hecho</a></li>
+        <li><a href="gustos.html" class="nav-link">Me gusta</a></li>
+        <li><a href="bajo-capo.html" class="nav-link">Bajo el capó</a></li>
+        <li><a href="contacto.html" class="nav-link nav-link--cta">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón de menú en móvil -->
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO: nombre + frase + terminal de arranque MIAU.================= -->
+    <section class="hero" id="inicio">
+
+      <!-- Rejilla decorativa de fondo -->
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <!-- Columna izquierda: identidad -->
+        <div class="hero-id">
+          <p class="eyebrow" data-scramble>SISTEMA / USUARIO / SESIÓN_01</p>
+
+          <!-- Nombre principal -->
+          <h1 class="hero-name" data-lines>AH</h1>
+
+          <!-- Frase de marca -->
+          <p class="hero-phrase" data-lines>Entender la máquina, no solo usarla.</p>
+
+          <p class="hero-desc">
+            Alumno de <strong>1º DAM</strong> en el <strong>IES Simarro</strong>. Tres años de informática:
+            apasionado de la programación y con una obsesión por lo que pasa por debajo de la interfaz.
+          </p>
+
+          <!-- Fila de especificaciones (tipo ficha técnica) -->
+          <dl class="specs">
+            <div><dt>Ciclo</dt><dd>Desarrollo de Aplicaciones Multiplataforma</dd></div>
+            <div><dt>Curso</dt><dd>1º · IES Simarro</dd></div>
+            <div><dt>Lenguaje base</dt><dd>Python</dd></div>
+            <div><dt>Estado</dt><dd class="ok">Disponible para hablar de código y más frikadas.</dd></div>
+          </dl>
+
+          <div class="hero-actions">
+            <a class="btn btn--solid" href="trabajo.html">Ver proyectos</a>
+            <a class="btn btn--ghost" href="contacto.html">Contactar</a>
+          </div>
+        </div>
+
+        <!-- Columna derecha: consola de arranque -->
+        <aside class="console" aria-label="Consola de arranque">
+          <div class="console-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="console-title">ah@miau: ~/sesión</span>
+          </div>
+          <div class="console-body" id="console" role="log" aria-live="polite"></div>
+        </aside>
+      </div>
+
+      <!-- Aviso de scroll -->
+      <div class="scroll-hint" aria-hidden="true"><span></span> scroll</div>
+    </section>
+
+    <!-- ================= CINTA DESLIZANTE DE CONCEPTOS ================= -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Python</span><i>◆</i><span>HTML</span><i>◆</i><span>CSS</span><i>◆</i><span>Línea de comandos</span><i>◆</i><span>Memoria</span><i>◆</i><span>Ensamblador</span><i>◆</i><span>Redes</span><i>◆</i><span>Sistemas</span><i>◆</i><span>Cine</span><i>◆</i>
+        <span>Python</span><i>◆</i><span>HTML</span><i>◆</i><span>CSS</span><i>◆</i><span>Línea de comandos</span><i>◆</i><span>Memoria</span><i>◆</i><span>Ensamblador</span><i>◆</i><span>Redes</span><i>◆</i><span>Sistemas</span><i>◆</i><span>Cine</span><i>◆</i>
+      </div>
+    </div>
+
+    <!-- ================= SECCIÓN: SOBRE MÍ ================= -->
+    <section class="section section--paper about" id="sobre-mi">
+      <div class="wrap about-grid">
+
+        <!-- Columna pegajosa (sticky): título + retrato -->
+        <div class="about-sticky">
+          <p class="section-num">01 / Sobre mí</p>
+          <h2 class="section-title" data-lines>Tres años mirando la pantalla… y lo que había detrás.</h2>
+
+          <figure class="portrait kb">
+            <img src="https://estaticos-cdn.prensaiberica.es/clip/120565ad-7178-41bb-8cad-e2919d262265_16-9-discover-aspect-ratio_default_0.jpg" alt="Escritorio de trabajo con editor de código y terminal">
+            <figcaption>Estudiante del · IES Doctor Lluis Simarro</figcaption>
+          </figure>
+        </div>
+
+        <!-- Columna de contenido -->
+        <div class="about-body">
+          <p class="lead" data-reveal>
+            He estudiado informática durante 3 años. En ese tiempo he aprendido diversidad de conceptos. Gracias a ellos,
+            he podido desarollar: una <strong>web corporativa para una empresa</strong>, <strong>aplicaciones de consola simples</strong>
+            y un montón de pequeños proyectos que, por sí mismos no son suficientemente relevantes para ser mencionados,
+            pero que en conjunto, me han enseñado mucho.
+          </p>
+
+          <p data-reveal>
+            Lo que me motiva en mi carrera de informático es que: <em>no me basta con que funcione</em>.
+            Quiero saber qué hace el sistema operativo cuando pido memoria, qué viaja por la red cuando pulso
+            Enter y por qué un programa se cae por un byte mal colocado.
+          </p>
+
+          <!-- Cita destacada -->
+          <blockquote class="pull" data-reveal>
+            «Cualquiera aprende a usar una herramienta. Yo quiero saber cómo se construye bit a bit.»
+          </blockquote>
+
+          <!-- Contadores animados -->
+          <div class="stats">
+            <div class="stat" data-reveal><span class="stat-num" data-count="3">0</span><span class="stat-lbl">Años estudiando informática</span></div>
+            <div class="stat" data-reveal><span class="stat-num" data-count="1">0</span><span class="stat-lbl">Curso del ciclo DAM</span></div>
+            <div class="stat" data-reveal><span class="stat-num" data-count="10" data-suffix="+">0</span><span class="stat-lbl">Proyectos y prácticas</span></div>
+            <div class="stat" data-reveal><span class="stat-num" data-count="100" data-suffix="%">0</span><span class="stat-lbl">Ganas de desmontarlo todo</span></div>
+          </div>
+
+          <!-- Ficha del centro -->
+          <table class="facts">
+            <caption class="sr-only">Ficha académica</caption>
+            <tr><th scope="row">Centro</th><td>IES Doctor Lluis Simarro</td></tr>
+            <tr><th scope="row">Ciclo</th><td>1º — Desarrollo de Aplicaciones Multiplataforma</td></tr>
+            <tr><th scope="row">Base</th><td>Programación, sistemas, marcas, lenguajes de marcado</td></tr>
+            <tr><th scope="row">En marcha</th><td>Conocimientos sesgados de nivel de técnico</td></tr>
+          </table>
+
+          <!-- Atajos a las páginas interiores -->
+          <nav class="page-links" aria-label="Secciones del sitio">
+            <a href="trabajo.html"><span>02</span>Lo que he hecho<em>Proyectos y prácticas</em></a>
+            <a href="gustos.html"><span>03</span>Me gusta<em>Código, cine y bajo nivel</em></a>
+            <a href="bajo-capo.html"><span>04</span>Bajo el capó<em>Conversor y ruta</em></a>
+            <a href="contacto.html"><span>05</span>Contacto<em>Escríbeme un mensaje</em></a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= PIE DE PÁGINA: contacto ================= -->
+  <footer class="footer" id="contacto">
+    <div class="wrap footer-grid">
+
+      <!-- Llamada principal -->
+      <div class="footer-cta">
+        <p class="section-num">05 / Contacto</p>
+        <h2 class="footer-title" data-lines>A un clic de distancia de conversar...</h2>
+        <p class="footer-lead">Disponible para prácticas de empresa, proyectos de ciclo y cualquier conversación técnica.</p>
+
+        <!-- Correo con botón de copiar -->
+        <div class="mail-row">
+          <!--<a class="mail" id="mailLink" href="mailto:ah.correo@ejemplo.com">ah.correo@ejemplo.com</a>-->
+          <a href="./contacto.html">
+          <button class="btn btn--copy">Contacto</button>
+          </a>
+        </div>
+        <p class="copy-feedback" id="copyFeedback" role="status"></p>
+
+        <!-- Enlaces de contacto -->
+        <!--<ul class="social">
+          <li><a href="contacto.html">Formulario</a></li>
+          <li><a href="https://github.com/01000001-1001000/" rel="noopener">GitHub</a></li>-->
+          <!--<li><a href="#" rel="noopener">LinkedIn</a></li>-->
+        <!--</ul>-->
+      </div>
+
+      <!-- Ficha lateral -->
+      <aside class="footer-meta">
+        <h3>Ficha</h3>
+        <dl>
+          <div><dt>Nombre</dt><dd>Al Hayy Castella</dd></div>
+          <div><dt>Estudios</dt><dd>1º DAM — IES Doctor Lluis Simarro <br>SMX - IES Doctor Lluis Simarro</dd></div>
+          <div><dt>Perfil</dt><dd>Programación · Bajo nivel</dd></div>
+          <div><dt>Ubicación</dt><dd>España</dd></div>
+        </dl>
+        <a class="btn btn--solid" href="#inicio">Volver arriba</a>
+      </aside>
+    </div>
+
+    <!-- Barra legal -->
+    <div class="wrap footer-bar">
+      <p>© <span id="year">2025</span> AH · Marca personal hecha sin manos con IA.</p>
+      <p class="footer-tiny">Copiando plantillas. Copiando frameworks. Copiando todo.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
